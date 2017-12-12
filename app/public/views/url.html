@@ -1,0 +1,104 @@
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2" >
+        <div class="col-md-8  col-sm-8">
+            <!-- <div class="row"> -->
+            <div class = "panel panel-default">
+                <div class="panel-body">
+                    <div>
+                        <h5> Your long URL is:</h5>
+                        <a ng-href="{{longUrl}}" target="_blank"> {{longUrl}} </a>
+                    </div>
+
+                    <!-- <div class="row"> -->
+                    <!-- <div class="panel-body"> -->
+                    <div>
+                          <h5> Your short URL is:</h5>
+                          <a ng-href="{{shortUrl}}" target="_blank"> {{shortUrlToShow}} </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "col-md-4 col-sm-4 ">
+            <div class = "panel panel-default">
+                <div class = "panel-heading">
+                    Total Clicks
+                </div>
+                <div class = "panel-body">
+                    {{ totalClicks }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class = "row">
+    <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2" >
+        <div class = "panel panel-default">
+            <div class = "panel-heading">
+                Clicks for the past:
+                <a href = "javascript:void(0);" ng-click="getTime(hour)"  ng-class="{ 'text-muted': time === 'hour'}">Hour</a>
+                <a href = "javascript:void(0);" ng-click="getTime(day)"   ng-class="{ 'text-muted': time === 'day'}">Day</a>
+                <a href = "javascript:void(0);" ng-click="getTime(month)" ng-class="{ 'text-muted': time === 'month'}">Month</a>
+            </div>
+            <div class = "panel-body">
+                <canvas id="line" class="chart chart-line" chart-data="lineData"
+                    chart-labels="lineLabels" chart-options="lineOptions" >
+                </canvas
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class = "row">
+    <div class = "col-md-6 col-sm-6">
+        <div class = "panel panel-default">
+            <div class = "panel-heading">
+                Referer
+            </div>
+            <div class = "panel-body">
+                <canvas id="pie" class="chart chart-pie"
+                    chart-data="pieData" chart-labels="pieLabels">
+                </canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class = "col-md-6  col-sm-6">
+        <div class = "panel panel-default">
+            <div class = "panel-heading">
+                Countries
+            </div>
+            <div class = "panel-body">
+                <canvas id="doughnut" class="chart chart-doughnut"
+                    chart-data="doughnutData" chart-labels="doughnutLabels" >
+                </canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class = "col-md-6 col-sm-6">
+        <div class = "panel panel-default">
+            <div class = "panel-heading">
+                Platform
+            </div>
+            <div class = "panel-body">
+                <canvas id="bar" class="chart chart-bar"
+                    chart-data="barData" chart-labels="barLabels" chart-options="barOptions">
+                </canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class = "col-md-6 col-sm-6">
+        <div class = "panel panel-default">
+            <div class = "panel-heading">
+                Browser
+            </div>
+            <div class = "panel-body">
+                <canvas id="base" class="chart chart-horizontal-bar"
+                    chart-data="baseData" chart-labels="baseLabels" chart-options="baseOptions" >
+                </canvas>
+            </div>
+        </div>
+    </div>
+</div>

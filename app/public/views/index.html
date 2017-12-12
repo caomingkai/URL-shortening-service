@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title> TinyUrl</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-resource.min.js"></script>
+
+    <script src="/node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="/node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+    <script src="/public/js/app.js"></script>
+    <script src="/public/js/controllers/homeController.js"></script>
+    <script src="/public/js/controllers/urlController.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+    </style>
+</head>
+
+
+
+<body ng-app="tinyurlApp">
+    <header>
+        <div class="container">
+            <div class="navbar navbar-default">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#"> TinyUrl </a>
+              </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="ng-view"></div>
+    </div>
+
+
+</body>
+
+</html>
