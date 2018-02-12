@@ -4,7 +4,7 @@
 - Increased QPS of AB test by 50% by deploying Redis cache layer and Nginx reverse proxy
 - Improved scalability by deploying Docker containers and Cassandra clusters
 
-![work flow chart](https://github.com/younghz/Markdown/raw/master/Res/URL-shortening-service/chart.png)
+![work flow chart](https://github.com/caomingkai/URL-shortening-service/raw/master/chart.png)
 
 ## Work flow
 
