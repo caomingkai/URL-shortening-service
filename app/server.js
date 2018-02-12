@@ -3,12 +3,14 @@
 
 var express = require('express');
 var app = express();
+
 var restRouter = require('./routes/rest');
 var redirectRouter = require( './routes/redirect');
 var indexRouter = require( './routes/index');
+
 var useragent = require( 'express-useragent');
 
-// using MongoDB, instead of gloable variable
+// using MongoDB, rather than gloable variable like below
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://user:user@ds259085.mlab.com:59085/urlshortening', { useMongoClient: true });
 
