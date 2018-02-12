@@ -8,14 +8,14 @@
 
 ## Work flow
 
-#### 1. Users come to the app webpage
+### 1. Users come to the app webpage
   - Browser send GET request with original URL to server
   - Server sends index.html to clients
   - Browser get the index.html with "<script src ='angularJS library '> <script src = 'app.js'> <script src = '/public/js/controllers/homeController.js'> in the head tag.
   - Browser again sends request for angularJS library/ js controller files to different servers
   - when browser encounter 'ng-view', it automatically turn to 'ng-router', ask for its view and controller; Again, sends corresponding GET request to fetch sub-view files
   - while browser parse the controller js file, it might do AJAX request to fetch information from server.
-#### 2. Users use the shortening service
+### 2. Users use the shortening service
   - input longURL in the input box, and click 'submit'
   - 'submit' fires the onclick funcion to do 2 things:
     - 1. send the longURL to specified URL, ie. POST  to localhost/api/v1/urls
@@ -30,11 +30,11 @@
   - Again, in the url.html subview, it sends GET request to the app server to get the longURL
     "Notice: This step could be simplified by just passing the longURL from the first subview to the second subview creating a service or using the $rootScope"
   - Now, in the new subview, the longURL and shortURL pair can be displayed
-#### 3. Visitors browse the shortURL from outside of the app webpage with 'localhost/:shortUrl'
+### 3. Visitors browse the shortURL from outside of the app webpage with 'localhost/:shortUrl'
   - the shortURL is just clicked from various browsers/ machines/ from different IP/ countries, at different time
   - when shortURL is clicked, it sends GET request 'localhost/:shortUrl' to the app server.
   - the app sever call the urlService to get the longURL from the shortURL, and redirect users to the original long URL
-#### 4. Information statistics
+### 4. Information statistics
   - we want to record the total number of clicks / their browsers/ machine brands/ their IP/ countries/ timestamp. And display them in the app webpage.
   - So first we need add more elements in the url.html subview in the frontend; And update those information in the backend.
     - 1. updating the info each time the shortURL is clicked. And then store them in the MongoDB
@@ -42,7 +42,7 @@
   - since all these clicks directly send GET request to 'localhost/:shortURL', which is handled by redirect.js. Thus, we here need a statistic service to update these info.
   - here we need the one of Express modules: Express-useragent to extract the information from the request
   - In the statistic service, we use the express-useragent to get the info, and then store them in the MongoDB database with a new schema.
-#### 5. app server's functions:
+### 5. app server's functions:
   - 1st function: handle app webpage request
   - 2nd function: handle outside's request
   - difference: clients shortURL request vs. app shortURL request
